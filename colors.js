@@ -1,21 +1,32 @@
 "use strict";
 window.addEventListener("DOMContentLoaded", init);
 
-// !make each function do one thing only
-// !separate the concerns between functions --
-// --let some handle the calculation + conversion, let others do the display
-
-//
 function init() {
     showHex();
 }
 
 function showHex() {
 
+    // get HTML Element
+    let hexElement = document.querySelector(".getColor");
+    //console.log(hexElement)
+
+    // get # for each color chosen
+    // let hexCode = document.querySelector(".getColor").textContent;
+    // console.log(hexCode)
+
+    hexElement.oninput = function () {
+
+        // display # of color on the page
+        let hexValue = document.querySelector('input[type=color]').value;
+        console.log(hexValue)
+
+        document.querySelector(".hexCode").textContent = `HEX: ${hexValue}`;
+    }
 }
 
-// RGB to HEX
-function rgbToHex(r, g, b) {
+// // RGB to HEX
+/* function rgbToHex(r, g, b) {
     r = r.string(16);
     g = g.string(16);
     b = b.string(16);
@@ -28,10 +39,10 @@ function rgbToHex(r, g, b) {
         b = "0" + b;
 
     return "#" + r + g + b;
-}
+} */
 
-// RGB to HSL
-function rgbToHsl(h, s, l) {
+// // RGB to HSL
+/* function rgbToHsl(h, s, l) {
     r /= 255;
     g /= 255;
     b /= 255;
@@ -70,7 +81,7 @@ function rgbToHsl(h, s, l) {
     l *= 100;
 
     console.log("hsl(%f,%f%,%f%)", h, s, l); // just for testing
-}
+} */
 
-// convert from HEX to RGB
-// write code that splits the HEX-color into 3 components + convert to actual numbers
+// // convert from HEX to RGB
+// // write code that splits the HEX-color into 3 components + convert to actual numbers 
