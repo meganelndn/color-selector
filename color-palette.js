@@ -121,10 +121,9 @@ function showHsl(r, g, b) {
     const hslCode = Object.create(hslObject);
     console.log(hslObject)
 
-
     return hslObject;
 }
 
-/* function showAnalogous(hslCodeObject) {
-    console.log(hslCodeObject)
+/* function showAnalogous(hslObject) {
+    console.log(hslObject)
 } */
