@@ -1,48 +1,57 @@
 "use strict";
 window.addEventListener("DOMContentLoaded", init);
 
+let HTML = {}
+
 function init() {
+    HTML.hexElement = document.querySelector(".getColor");
+
     showHex();
+    hexToRgb();
 }
 
 function showHex() {
 
-    // get HTML Element
-    let hexElement = document.querySelector(".getColor");
-    //console.log(hexElement)
+    // when color selected, new function showing hex code
+    HTML.hexElement.oninput = function () {
 
-    // get # for each color chosen
-    // let hexCode = document.querySelector(".getColor").textContent;
-    // console.log(hexCode)
+        // display # of color dynamically in console
+        let hexValue = document.querySelector("input[type=color]").value;
 
-    hexElement.oninput = function () {
-
-        // display # of color on the page
-        let hexValue = document.querySelector('input[type=color]').value;
-        console.log(hexValue)
-
+        // make # appear dynamically on page == "HEX: #c0ffee"
         document.querySelector(".hexCode").textContent = `HEX: ${hexValue}`;
     }
 }
 
-// // RGB to HEX
-/* function rgbToHex(r, g, b) {
-    r = r.string(16);
-    g = g.string(16);
-    b = b.string(16);
+function hexToRgb() {
 
-    if (r.length === 1)
-        r = "0" + r;
-    if (g.length === 1)
-        g = "0" + g;
-    if (b.length === 1)
-        b = "0" + b;
+    let hexValue = document.querySelector("input[type=color]").value;
 
-    return "#" + r + g + b;
-} */
+    // get r = red
+    const r = parseInt(hexValue.substr(1, 2), 16);
+    // get g = green
+    const g = parseInt(hexValue.substr(3, 2), 16);
+    // get b = blue
+    const b = parseInt(hexValue.substr(5, 2), 16);
+    //???
+    console.log(parseInt(hexValue.substr(1, 2), 16))
+    console.log(parseInt(hexValue.substr(3, 2), 16))
+    console.log(parseInt(hexValue.substr(5, 2), 16))
 
-// // RGB to HSL
-/* function rgbToHsl(h, s, l) {
+    // when color selected, new function showing hex code
+    HTML.hexElement.oninput = function () {
+
+        // display # of color dynamically in console
+        let hexValue = document.querySelector("input[type=color]").value;
+
+        // make RGB code appear dynamically on page == "HEX: #c0ffee"
+        document.querySelector(".rgbCode").textContent = `RGB: ${r},${g},${b}`;
+        document.querySelector(".hexCode").textContent = `HEX: ${hexValue}`;
+    }
+}
+
+/* // RGB to HSL
+function rgbToHsl(h, s, l) {
     r /= 255;
     g /= 255;
     b /= 255;
@@ -82,6 +91,3 @@ function showHex() {
 
     console.log("hsl(%f,%f%,%f%)", h, s, l); // just for testing
 } */
-
-// // convert from HEX to RGB
-// // write code that splits the HEX-color into 3 components + convert to actual numbers 
