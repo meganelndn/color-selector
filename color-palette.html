@@ -5,10 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Palette</title>
+    <link rel="stylesheet" href="color-palette.css">
 </head>
 
 <body>
-    <input type="color">
+
+    <input type="color" class="getColor">
+
+    <input type="checkbox">Analogous
+    <input type="checkbox">Monochromatic
+    <input type="checkbox">Triad
+    <input type="checkbox">Complementary
+    <input type="checkbox">Compound
+    <input type="checkbox">Shades
+
+    <div class="grid">
+
+        <div class="section1">
+            <div class="color1 box"></div>
+            <p class="color1Hex"></p>
+            <p class="color1Rgb"></p>
+            <p class="color1Hsl"></p>
+        </div>
+        <div class="section2">
+            <div class="color2 box"></div>
+            <p class="color2Hex"></p>
+            <p class="color2Rgb"></p>
+            <p class="color2Hsl"></p>
+        </div>
+        <div class="section3">
+            <div class="selectedBaseColor box"></div>
+            <p class="hexCode"></p>
+            <p class="rgbCode"></p>
+            <p class="hslCode"></p>
+        </div>
+        <div class="section4">
+            <div class="color3 box"></div>
+            <p class="color3Hex"></p>
+            <p class="color3Rgb"></p>
+            <p class="color3Hsl"></p>
+        </div>
+        <div class="section5">
+            <div class="color4 box"></div>
+            <p class="color4Hex"></p>
+            <p class="color4Rgb"></p>
+            <p class="color4Hsl"></p>
+        </div>
+
+    </div>
+
+    <!--<div id="colors" class="one"></div>
+    <p class="hexCode">HEX:</p>
+    <p class="rgbCode">RGB:</p>
+    <p class="hslCode">HSL:</p>
+
+    <div id="colors" class="two"></div>
+    <p class="hexCode">HEX:</p>
+    <p class="rgbCode">RGB:</p>
+    <p class="hslCode">HSL:</p>
+
+    <div id="colors" class="basecolor" class="getColor"></div>
+    <p class="hexCode">HEX:</p>
+    <p class="rgbCode">RGB:</p>
+    <p class="hslCode">HSL:</p>
+
+    <div id="colors" class="three"></div>
+    <p class="hexCode">HEX:</p>
+    <p class="rgbCode">RGB:</p>
+    <p class="hslCode">HSL:</p>
+
+    <div id="colors" class="four"></div>
+    <p class="hexCode">HEX:</p>
+    <p class="rgbCode">RGB:</p>
+    <p class="hslCode">HSL:</p>-->
 
     <script src="color-palette.js"></script>
 </body>
