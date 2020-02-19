@@ -20,7 +20,6 @@ function showHex() {
 
         // make # appear dynamically on page == "HEX: #c0ffee"
         document.querySelector(".hexCode").textContent = `HEX: ${hexValue}`;
-
     }
 }
 
@@ -41,7 +40,7 @@ function showRgb() {
         const b = parseInt(hexValue.substr(5, 2), 16);
 
         // make RGB code appear dynamically on page == "HEX: #c0ffee"
-        document.querySelector(".rgbCode").textContent = `RGB: ${r},${g},${b}`;
+        document.querySelector(".rgbCode").textContent = `RGB: ${r}, ${g}, ${b}`;
         document.querySelector(".hexCode").textContent = `HEX: ${hexValue}`;
 
         showHsl(r, g, b)
@@ -88,5 +87,5 @@ function showHsl(r, g, b) {
     s *= 100;
     l *= 100;
 
-    document.querySelector(".hslCode").textContent = `HSL: ${h},${s},${l}`;
+    document.querySelector(".hslCode").textContent = `HSL: ${parseInt(h)}, ${parseInt(s)}%, ${parseInt(l)}%`;
 }
